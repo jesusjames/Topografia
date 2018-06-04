@@ -1,12 +1,162 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Poligonal cerrada | Topograf�a</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Calculo Poligonal cerrada</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
 </head>
+
 <body>
-<h1>TOPOGRAFIA POLIGONAL CERRADA</h1>
-<img alt="" src="/imagenes/TechnoBits01.png">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="/">
+          <img class="img-fluid" src="images/TechnoBits01.png" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="index.html">
+          <img src="images/logo-mini.svg" alt="logo" />
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <div class="col-lg-12 text-center">
+        	<h1>Calculo Poligonal cerrada</h1>
+        </div>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      	<div class="card">
+                    <div class="card-body">
+                      <h3>1. Vertices</h3>
+                      <p class="card-description">
+                        primero ingrese el numero de vertices
+                      </p>
+                      <div class="form-group">
+                      	<label for="exampleInputEmail1">Numero de vertices:</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend bg-info">
+                            <span class="input-group-text bg-transparent">
+                              <i class="mdi mdi-shield-outline text-white"></i>
+                            </span>
+                          </div>
+                          <input type="number" id="vertices" class="form-control" placeholder="ejemplo: 5" aria-label="vertices" aria-describedby="colored-addon1">
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-info btn-fw" onclick="vertices()">Siguiente</button>
+                      </div>
+                    </div>
+                  </div>	 
+	  </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-4 grid-margin stretch-card">
+              <div class="card">
+                    <div class="card-body">
+                      <h3>2. Datos</h3>
+                      <p class="card-description">
+                        Ingrese los datos obtenidos para la poligonal cerrada
+                      </p>
+                      <div id="datos-vertices"></div>
+              			                        
+                        <button type="button" class="btn btn-primary mr-2" onclick="calcular()">Calcular y finalizar</button>
+                        <button class="btn btn-outline-danger" onclick="reset()">Reiniciar todo</button>
+                 
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-8 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h3>3. Resultados</h3>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                            #
+                          </th>
+                          <th>
+                            Distancia
+                          </th>
+                          <th>
+                            Azimut
+                          </th>
+                          <th>
+                            N+
+                          </th>
+                          <th>
+                            S-
+                          </th>
+                          <th>
+                            E+
+                          </th>
+                          <th>
+                            W-
+                          </th>
+                          <th>
+                            Coorde N
+                          </th>
+                          <th>
+                            Coorde E
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="resultados">
+                       
+                      </tbody>
+                    </table>
+                    <div id="loader"></div><!-- Carga de datos ajax aqui -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Asignatura: Topografía |
+              <a href="http://www.usco.edu.co" target="_blank">Universidad Surcolombiana </a></span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Jesús Santiago | Manuela Tique | Alejandro
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <script src="js/calculo.js"></script>
+  
+  
 
 </body>
+
 </html>
