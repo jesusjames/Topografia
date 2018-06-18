@@ -51,7 +51,7 @@ function calcular(){
 	var cantVertices = $('#vertices').val();
 	for(var i = 1; i <= cantVertices; i++){
 		if($('#distancia'+ i).val() < 0 || $('#distancia'+ i).val() == ""){
-			swal("Error!", "Debe ingresar la distancia del vertice"+ i, "error").then((value) => {
+			swal("Error!", "Debe ingresar la distancia del vertice "+ i, "error").then((value) => {
 				$('#distancia'+ i).focus();
 			});
 			return false;
